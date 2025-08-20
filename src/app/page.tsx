@@ -1,13 +1,9 @@
-import Link from "next/link";
-
-import { ticketsPath } from "@/paths";
+import { Heading } from "@/components/Heading";
 
 const HomePage = () => {
   return (
-    <div className="text-3xl font-bold underline">
-      <Link className="text-white hover:text-blue-700" href={ticketsPath()}>
-        Tickets
-      </Link>
+    <div className="min-h-screen bg-background text-foreground">
+      <Heading title="主页" description="欢迎使用工单管理系统"></Heading>
     </div>
   );
 };

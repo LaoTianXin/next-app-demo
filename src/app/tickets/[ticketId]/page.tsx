@@ -1,33 +1,36 @@
+import Link from "next/link";
+
+import { Placeholder } from "@/components/Placeholder";
+import { Button } from "@/components/ui/button";
 import { initialTickets } from "@/data";
+import { TicketCard } from "@/features/ticket/component";
+import { ticketsPath } from "@/paths";
 
 type TicketPageProps = {
-  params: {
+  params: Promise<{
     ticketId: string;
-  };
+  }>;
 };
 
-const TICKET_STATUS_ICON = {
-  OPEN: "🟢",
-  IN_PROGRESS: "🟡",
-  CLOSED: "🔴",
-};
-
-export default function TicketPage({ params }: TicketPageProps) {
-  const { ticketId } = params;
+export default async function TicketPage({ params }: TicketPageProps) {
+  const { ticketId } = await params;
   const ticket = initialTickets.find(
     (ticket) => ticket.id === parseInt(ticketId)
   );
-  if (!ticket) return <div>Ticket not found</div>;
+  const NotFound = (
+    <Placeholder
+      title="工单不存在"
+      button={
+        <Button variant="outline" asChild>
+          <Link href={ticketsPath()}>返回工单列表</Link>
+        </Button>
+      }
+    />
+  );
+  if (!ticket) return NotFound;
   return (
-    <div className="flex flex-col gap-4">
-      <div className="flex items-center gap-2">
-        <span className="text-2xl font-bold">
-          {TICKET_STATUS_ICON[ticket.status]}
-        </span>
-        <span className="text-2xl font-bold">{ticket.status}</span>
-      </div>
-      <h1 className="text-2xl font-bold">{ticket.title}</h1>
-      <p className="text-gray-500">{ticket.description}</p>
+    <div className="">
+      <TicketCard ticket={ticket} index={0} isDetail />
     </div>
   );
 }
