@@ -5,342 +5,73 @@
 
 /* ===== 多主题配置 - Tailwind CSS v4 设计系统 ===== */
 
-/* 主题1: 经典蓝 (默认) */
-:root,
-[data-theme="classic"] {
-  /* 基础颜色 */
-  --background: #ffffff;
-  --foreground: #0f172a;
-
-  /* 品牌色系 */
-  --primary: #2563eb;
-  /* Blue 600 */
-  --primary-foreground: #ffffff;
-  --secondary: #f8fafc;
-  /* Slate 50 */
-  --secondary-foreground: #0f172a;
-  --accent: #f8fafc;
-  /* Slate 50 */
-  --accent-foreground: #0f172a;
-
-  /* 状态色系 */
-  --destructive: #dc2626;
-  /* Red 600 */
-  --destructive-foreground: #ffffff;
-  --success: #059669;
-  /* Emerald 600 */
-  --success-foreground: #ffffff;
-  --warning: #d97706;
-  /* Amber 600 */
-  --warning-foreground: #ffffff;
-  --info: #0891b2;
-  /* Cyan 600 */
-  --info-foreground: #ffffff;
-
-  /* 中性色系 */
-  --muted: #f8fafc;
-  /* Slate 50 */
-  --muted-foreground: #64748b;
-  /* Slate 500 */
-  --border: #e2e8f0;
-  /* Slate 200 */
-  --input: #ffffff;
-  --ring: #2563eb;
-  /* Blue 600 */
-
-  /* 卡片和表面 */
-  --card: #ffffff;
-  --card-foreground: #0f172a;
-  --popover: #ffffff;
-  --popover-foreground: #0f172a;
-
-  /* shadcn图表颜色 */
-  --chart-1: #2563eb;
-  --chart-2: #059669;
-  --chart-3: #d97706;
-  --chart-4: #dc2626;
-  --chart-5: #8b5cf6;
-
-  /* shadcn侧边栏颜色 */
-  --sidebar: #ffffff;
-  --sidebar-foreground: #0f172a;
-  --sidebar-primary: #2563eb;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #f8fafc;
-  --sidebar-accent-foreground: #0f172a;
-  --sidebar-border: #e2e8f0;
-  --sidebar-ring: #2563eb;
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
 }
 
-/* 主题2: 现代绿 */
-[data-theme="modern"] {
-  /* 基础颜色 */
-  --background: #f0fdf4;
-  /* Green 50 */
-  --foreground: #14532d;
-  /* Green 900 */
-
-  /* 品牌色系 */
-  --primary: #16a34a;
-  /* Green 600 */
-  --primary-foreground: #ffffff;
-  --secondary: #dcfce7;
-  /* Green 100 */
-  --secondary-foreground: #14532d;
-  --accent: #dcfce7;
-  /* Green 100 */
-  --accent-foreground: #14532d;
-
-  /* 状态色系 */
-  --destructive: #ef4444;
-  /* Red 500 */
-  --destructive-foreground: #ffffff;
-  --success: #22c55e;
-  /* Green 500 */
-  --success-foreground: #ffffff;
-  --warning: #eab308;
-  /* Yellow 500 */
-  --warning-foreground: #ffffff;
-  --info: #06b6d4;
-  /* Cyan 500 */
-  --info-foreground: #ffffff;
-
-  /* 中性色系 */
-  --muted: #dcfce7;
-  /* Green 100 */
-  --muted-foreground: #16a34a;
-  /* Green 600 */
-  --border: #bbf7d0;
-  /* Green 200 */
-  --input: #ffffff;
-  --ring: #16a34a;
-  /* Green 600 */
-
-  /* 卡片和表面 */
-  --card: #ffffff;
-  --card-foreground: #14532d;
-  --popover: #ffffff;
-  --popover-foreground: #14532d;
-
-  /* shadcn图表颜色 */
-  --chart-1: #16a34a;
-  --chart-2: #059669;
-  --chart-3: #eab308;
-  --chart-4: #ef4444;
-  --chart-5: #06b6d4;
-
-  /* shadcn侧边栏颜色 */
-  --sidebar: #ffffff;
-  --sidebar-foreground: #14532d;
-  --sidebar-primary: #16a34a;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #dcfce7;
-  --sidebar-accent-foreground: #14532d;
-  --sidebar-border: #bbf7d0;
-  --sidebar-ring: #16a34a;
-}
-
-/* 主题3: 温馨橙 */
-[data-theme="warm"] {
-  /* 基础颜色 */
-  --background: #fff7ed;
-  /* Orange 50 */
-  --foreground: #9a3412;
-  /* Orange 800 */
-
-  /* 品牌色系 */
-  --primary: #ea580c;
-  /* Orange 600 */
-  --primary-foreground: #ffffff;
-  --secondary: #fed7aa;
-  /* Orange 200 */
-  --secondary-foreground: #9a3412;
-  --accent: #fed7aa;
-  /* Orange 200 */
-  --accent-foreground: #9a3412;
-
-  /* 状态色系 */
-  --destructive: #dc2626;
-  /* Red 600 */
-  --destructive-foreground: #ffffff;
-  --success: #16a34a;
-  /* Green 600 */
-  --success-foreground: #ffffff;
-  --warning: #d97706;
-  /* Amber 600 */
-  --warning-foreground: #ffffff;
-  --info: #0891b2;
-  /* Cyan 600 */
-  --info-foreground: #ffffff;
-
-  /* 中性色系 */
-  --muted: #fed7aa;
-  /* Orange 200 */
-  --muted-foreground: #ea580c;
-  /* Orange 600 */
-  --border: #fdba74;
-  /* Orange 300 */
-  --input: #ffffff;
-  --ring: #ea580c;
-  /* Orange 600 */
-
-  /* 卡片和表面 */
-  --card: #ffffff;
-  --card-foreground: #9a3412;
-  --popover: #ffffff;
-  --popover-foreground: #9a3412;
-
-  /* shadcn图表颜色 */
-  --chart-1: #ea580c;
-  --chart-2: #dc2626;
-  --chart-3: #d97706;
-  --chart-4: #16a34a;
-  --chart-5: #0891b2;
-
-  /* shadcn侧边栏颜色 */
-  --sidebar: #ffffff;
-  --sidebar-foreground: #9a3412;
-  --sidebar-primary: #ea580c;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #fed7aa;
-  --sidebar-accent-foreground: #9a3412;
-  --sidebar-border: #fdba74;
-  --sidebar-ring: #ea580c;
-}
-
-/* 主题4: 冷酷紫 */
-[data-theme="cool"] {
-  /* 基础颜色 */
-  --background: #0f0f23;
-  /* 深紫蓝 */
-  --foreground: #e2e8f0;
-  /* Slate 200 */
-
-  /* 品牌色系 */
-  --primary: #8b5cf6;
-  /* Violet 500 */
-  --primary-foreground: #ffffff;
-  --secondary: #1e293b;
-  /* Slate 800 */
-  --secondary-foreground: #e2e8f0;
-  --accent: #1e293b;
-  /* Slate 800 */
-  --accent-foreground: #e2e8f0;
-
-  /* 状态色系 */
-  --destructive: #ef4444;
-  /* Red 500 */
-  --destructive-foreground: #ffffff;
-  --success: #10b981;
-  /* Emerald 500 */
-  --success-foreground: #ffffff;
-  --warning: #f59e0b;
-  /* Amber 500 */
-  --warning-foreground: #ffffff;
-  --info: #06b6d4;
-  /* Cyan 500 */
-  --info-foreground: #ffffff;
-
-  /* 中性色系 */
-  --muted: #1e293b;
-  /* Slate 800 */
-  --muted-foreground: #94a3b8;
-  /* Slate 400 */
-  --border: #334155;
-  /* Slate 700 */
-  --input: #1e293b;
-  /* Slate 800 */
-  --ring: #8b5cf6;
-  /* Violet 500 */
-
-  /* 卡片和表面 */
-  --card: #1e293b;
-  /* Slate 800 */
-  --card-foreground: #f1f5f9;
-  --popover: #1e293b;
-  --popover-foreground: #f1f5f9;
-
-  /* shadcn图表颜色 */
-  --chart-1: #8b5cf6;
-  --chart-2: #06b6d4;
-  --chart-3: #10b981;
-  --chart-4: #f59e0b;
-  --chart-5: #ef4444;
-
-  /* shadcn侧边栏颜色 */
-  --sidebar: #1e293b;
-  --sidebar-foreground: #f1f5f9;
-  --sidebar-primary: #8b5cf6;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #334155;
-  --sidebar-accent-foreground: #e2e8f0;
-  --sidebar-border: #334155;
-  --sidebar-ring: #8b5cf6;
-}
-
-/* 主题5: 彩虹色 */
-[data-theme="rainbow"] {
-  /* 基础颜色 */
-  --background: #667eea;
-  --foreground: #ffffff;
-
-  /* 品牌色系 */
-  --primary: #ff6b6b;
-  /* 珊瑚红 */
-  --primary-foreground: #ffffff;
-  --secondary: rgba(255, 255, 255, 0.15);
-  --secondary-foreground: #ffffff;
-  --accent: rgba(255, 255, 255, 0.15);
-  --accent-foreground: #ffffff;
-
-  /* 状态色系 */
-  --destructive: #ff8787;
-  /* 浅红 */
-  --destructive-foreground: #ffffff;
-  --success: #51cf66;
-  /* 亮绿 */
-  --success-foreground: #ffffff;
-  --warning: #ffd43b;
-  /* 金黄 */
-  --warning-foreground: #2d3748;
-  --info: #74c0fc;
-  /* 天蓝 */
-  --info-foreground: #1a202c;
-
-  /* 中性色系 */
-  --muted: rgba(255, 255, 255, 0.15);
-  --muted-foreground: #ffffff;
-  --border: rgba(255, 255, 255, 0.3);
-  --input: rgba(255, 255, 255, 0.1);
-  --ring: #ff6b6b;
-
-  /* 卡片和表面 */
-  --card: rgba(255, 255, 255, 0.1);
-  --card-foreground: #ffffff;
-  --popover: rgba(45, 55, 72, 0.95);
-  --popover-foreground: #ffffff;
-
-  /* shadcn图表颜色 */
-  --chart-1: #ff6b6b;
-  --chart-2: #4ecdc4;
-  --chart-3: #ffe66d;
-  --chart-4: #51cf66;
-  --chart-5: #74c0fc;
-
-  /* shadcn侧边栏颜色 */
-  --sidebar: rgba(255, 255, 255, 0.1);
-  --sidebar-foreground: #ffffff;
-  --sidebar-primary: #ff6b6b;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: rgba(255, 255, 255, 0.15);
-  --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: rgba(255, 255, 255, 0.3);
-  --sidebar-ring: #ff6b6b;
-}
-
-/* 彩虹主题特殊渐变背景 */
-[data-theme="rainbow"] body {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.269 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.371 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.439 0 0);
 }
 
 /* Tailwind CSS v4 主题配置 */
@@ -465,73 +196,7 @@ body {
   }
 }
 
-@keyframes fade-out {
-  from {
-    opacity: 1;
-  }
 
-  to {
-    opacity: 0;
-  }
-}
-
-@keyframes slide-in-from-bottom {
-  from {
-    opacity: 0;
-    transform: translateY(1rem);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slide-in-from-top {
-  from {
-    opacity: 0;
-    transform: translateY(-1rem);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes scale-in {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes theme-change {
-  from {
-    opacity: 0.8;
-    transform: scale(0.98);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
 
 /* 高级tickets列表动画关键帧 */
 @keyframes ticket-fade-in-up {
@@ -587,29 +252,7 @@ body {
   animation: fade-in var(--animate-duration-normal) var(--animate-timing-ease-out);
 }
 
-.animate-fade-out {
-  animation: fade-out var(--animate-duration-normal) var(--animate-timing-ease-out);
-}
 
-.animate-slide-in-bottom {
-  animation: slide-in-from-bottom var(--animate-duration-normal) var(--animate-timing-ease-out);
-}
-
-.animate-slide-in-top {
-  animation: slide-in-from-top var(--animate-duration-normal) var(--animate-timing-ease-out);
-}
-
-.animate-scale-in {
-  animation: scale-in var(--animate-duration-normal) var(--animate-timing-ease-out);
-}
-
-.animate-spin {
-  animation: spin 1s linear infinite;
-}
-
-.animate-theme-change {
-  animation: theme-change var(--animate-duration-slow) var(--animate-timing-ease-out);
-}
 
 /* Tickets列表专属动画类 */
 .ticket-animate-fade-in-up {
@@ -657,21 +300,7 @@ body {
   animation-delay: 750ms;
 }
 
-/* 交互状态增强 */
-.interactive {
-  transition: var(--transition-all);
-  cursor: pointer;
-}
 
-.interactive:hover {
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-lg);
-}
-
-.interactive:active {
-  transform: translateY(0);
-  box-shadow: var(--shadow);
-}
 
 /* Tickets专属交互增强 */
 .ticket-interactive {
@@ -688,29 +317,7 @@ body {
   transform: scale(0.98);
 }
 
-/* 主题切换器特殊样式 */
-.theme-switch-button {
-  position: relative;
-  overflow: hidden;
-  transition: var(--transition-all);
-}
 
-.theme-switch-button::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--primary);
-  opacity: 0;
-  transition: opacity var(--animate-duration-fast) var(--animate-timing-ease-out);
-}
-
-.theme-switch-button:hover::before {
-  opacity: 0.1;
-}
-
-.theme-switch-button.active::before {
-  opacity: 0.2;
-}
 
 
 

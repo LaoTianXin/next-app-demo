@@ -48,19 +48,23 @@ export function TicketCard({ ticket, index, isDetail }: TicketCardProps) {
       className="group block"
       aria-label={`查看工单 #${ticket.id}: ${ticket.title}`}
     >
-      <Button variant="outline" size="icon">
+      <Button
+        className="cursor-pointer hover:bg-primary/10 hover:text-primary"
+        variant="outline"
+        size="icon"
+      >
         <SquarePen />
       </Button>
     </Link>
   );
 
   return (
-    <div className="flex max-w-2xl gap-x-1 mx-auto">
-      <Card
-        className={`ticket-interactive flex-1 ${getTicketAnimationClass(
-          index
-        )} hover:shadow-md transition-all duration-200`}
-      >
+    <div
+      className={`flex max-w-2xl gap-x-1 mx-auto ${getTicketAnimationClass(
+        index
+      )} ticket-interactive hover:shadow-md transition-all duration-200`}
+    >
+      <Card className={`flex-1`}>
         <CardHeader className="pb-4">
           {/* 工单状态标签和编号 */}
           <div className="flex items-center gap-3 mb-2">
@@ -91,13 +95,6 @@ export function TicketCard({ ticket, index, isDetail }: TicketCardProps) {
           >
             {ticket.description}
           </CardDescription>
-
-          {/* 查看详情动作 */}
-          <CardAction>
-            <span className="text-primary text-sm font-medium group-hover:text-primary/80 transition-colors">
-              查看详情 →
-            </span>
-          </CardAction>
         </CardHeader>
       </Card>
       <div className="flex flex-col gap-y-1">
