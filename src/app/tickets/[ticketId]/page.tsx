@@ -1,10 +1,6 @@
-import Link from "next/link";
-
-import { Placeholder } from "@/components/Placeholder";
-import { Button } from "@/components/ui/button";
-import { initialTickets } from "@/data";
 import { TicketCard } from "@/features/ticket/component";
-import { ticketsPath } from "@/paths";
+import { getTicket } from "@/features/ticket/queries/get-ticket";
+import { notFound } from "next/navigation";
 
 type TicketPageProps = {
   params: Promise<{
@@ -14,20 +10,9 @@ type TicketPageProps = {
 
 export default async function TicketPage({ params }: TicketPageProps) {
   const { ticketId } = await params;
-  const ticket = initialTickets.find(
-    (ticket) => ticket.id === parseInt(ticketId)
-  );
-  const NotFound = (
-    <Placeholder
-      title="工单不存在"
-      button={
-        <Button variant="outline" asChild>
-          <Link href={ticketsPath()}>返回工单列表</Link>
-        </Button>
-      }
-    />
-  );
-  if (!ticket) return NotFound;
+  const ticket = await getTicket(parseInt(ticketId));
+
+  if (!ticket) return notFound();
   return (
     <div className="">
       <TicketCard ticket={ticket} index={0} isDetail />

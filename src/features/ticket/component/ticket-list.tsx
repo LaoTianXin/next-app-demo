@@ -1,21 +1,9 @@
-import { Ticket } from "../type";
-import { TicketCard } from "./TicketCard";
+import { getTickets } from "../queries/get-tickets";
+import { TicketCard } from "./ticket-card";
 
-interface TicketListProps {
-  /** 工单数据列表 */
-  tickets: Ticket[];
-}
+export async function TicketList() {
+  const tickets = await getTickets();
 
-/**
- * 工单列表组件
- *
- * 功能特性：
- * - 渲染工单卡片列表
- * - 空状态展示
- * - 响应式布局（最大宽度限制和居中）
- * - 统一的间距和动画
- */
-export function TicketList({ tickets }: TicketListProps) {
   return (
     <div className="flex justify-center mt-10">
       <div className="w-full px-4">

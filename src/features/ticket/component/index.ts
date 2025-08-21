@@ -1,3 +1,3 @@
 // 工单功能组件导出
-export { TicketCard } from "./TicketCard";
-export { TicketList } from "./TicketList";
+export { TicketCard } from "./ticket-card";
+export { TicketList } from "./ticket-list";
