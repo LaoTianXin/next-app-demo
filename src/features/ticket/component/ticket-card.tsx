@@ -1,3 +1,4 @@
+import { Ticket } from "@prisma/client";
 import clsx from "clsx";
 import { SquarePen } from "lucide-react";
 import Link from "next/link";
@@ -17,11 +18,10 @@ import {
   TICKET_STATUS_STYLE,
   TICKET_STATUS_TEXT,
 } from "../constant";
-import { Ticket } from "../type";
 
 interface TicketCardProps {
   /** 工单数据 */
-  ticket: Ticket;
+  ticket: Ticket | null;
   /** 工单在列表中的索引，用于动画延迟 */
   index: number;
   isDetail?: boolean;
@@ -38,6 +38,8 @@ interface TicketCardProps {
  * - 已关闭工单的视觉区分（删除线）
  */
 export function TicketCard({ ticket, index, isDetail }: TicketCardProps) {
+  if (!ticket) return null;
+
   // 获取状态对应的图标组件
   const StatusIcon = TICKET_STATUS_ICON[ticket.status];
 

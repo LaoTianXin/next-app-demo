@@ -1,8 +1,9 @@
 "use client";
+import Link from "next/link";
+
 import { Placeholder } from "@/components/Placeholder";
 import { Button } from "@/components/ui/button";
 import { homePath } from "@/paths";
-import Link from "next/link";
 
 export default function TicketsError({
   error,

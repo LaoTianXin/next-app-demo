@@ -1,8 +1,8 @@
 import { Suspense } from "react";
 
 import { Heading } from "@/components/Heading";
-import { TicketList } from "@/features/ticket/component";
 import { Spinner } from "@/components/Spinner";
+import { TicketList } from "@/features/ticket/component";
 
 export default function TicketsPage() {
   return (
