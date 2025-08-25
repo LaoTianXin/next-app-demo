@@ -1,6 +1,6 @@
 import { Ticket } from "@prisma/client";
 import clsx from "clsx";
-import { SquarePen } from "lucide-react";
+import { LayoutDashboard, SquarePen, Trash2 } from "lucide-react";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
@@ -10,8 +10,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ticketPath } from "@/paths";
+import { ticketEditPath, ticketPath } from "@/paths";
 
+import { deleteTicket } from "../actions/delete-ticket";
 import {
   getTicketAnimationClass,
   TICKET_STATUS_ICON,
@@ -46,14 +47,35 @@ export function TicketCard({ ticket, index, isDetail }: TicketCardProps) {
   const DetailButton = () => (
     <Link
       href={ticketPath(ticket.id)}
+      prefetch
       className="group block"
       aria-label={`查看工单 #${ticket.id}: ${ticket.title}`}
     >
       <Button
-        className="cursor-pointer hover:bg-primary/10 hover:text-primary"
+        className="hover:bg-primary/10 hover:text-primary"
         variant="outline"
         size="icon"
       >
+        <LayoutDashboard />
+      </Button>
+    </Link>
+  );
+
+  const DeleteButton = () => (
+    <form action={deleteTicket.bind(null, ticket.id)}>
+      <Button
+        variant="outline"
+        size="icon"
+        className="hover:bg-destructive/10 hover:text-destructive"
+      >
+        <Trash2 />
+      </Button>
+    </form>
+  );
+
+  const EditButton = () => (
+    <Link prefetch href={ticketEditPath(ticket.id)}>
+      <Button variant="outline" size="icon">
         <SquarePen />
       </Button>
     </Link>
@@ -99,7 +121,17 @@ export function TicketCard({ ticket, index, isDetail }: TicketCardProps) {
         </CardHeader>
       </Card>
       <div className="flex flex-col gap-y-1">
-        {isDetail ? null : <DetailButton />}
+        {isDetail ? (
+          <>
+            <DeleteButton />
+            <EditButton />
+          </>
+        ) : (
+          <>
+            <DetailButton />
+            <EditButton />
+          </>
+        )}
       </div>
     </div>
   );
